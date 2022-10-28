@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | Listagem</title>
+</head>
+<body>
+    <style>
+        table{border: 1px solid black;padding: 8px;}
+        tr{border: 1px solid black;padding: 5px;margin-bottom: 10px;}
+        td{border: 1px solid black;padding: 5px;}
+        th{border: 1px solid black;padding: 5px;}
+        ul{ border: 1px solid black;max-width: 200px;}
+    </style>
+    <h2>Clientes Cadastrados: Lista</h2>
+    <ul>
+        <% Lista.forEach(function(user){ %>
+            <li><%= user.Nome %></li>
+            <li><%= user.Sobrenome %></li>
+            <li><%= user.Empresa %></li>
+            <br>
+        <% }) %>
+    </ul>
+
+    <h2>Clientes Cadastrados: Tabela</h2>
+
+    <table>
+        <% Lista.forEach(function(user){ %>
+        <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Empresa</th>
+        </tr>
+        <tr>
+            <td><%= user.Nome %></td>
+            <td><%= user.Sobrenome %></td>
+            <td><%= user.Empresa %></td>
+        </tr>
+        <% }) %>
+    </table>
+    <br>
+    <a href="http://localhost:3000/registrar">Página de Cadastro.</a>
+</body>
+</html>
